@@ -1,0 +1,24 @@
+<gmap-accordion
+  [contentMarginLeft]="94"
+  [expanded]="true"
+  [id]="'sessions'"
+  [showIncrementer]="true"
+  [incrementerWidth]="'60px'"
+  [(incrementerValue)]="sessionsCount"
+  (incrementerValueChange)="onCountChange($event)"
+  [title]="'Sessions'"
+>
+
+  <gmap-seasons-form
+    [breakpoint]="breakpoint"
+    [lightBlue]="lightBlue"
+    [lightYellow]="lightYellow"
+  />
+
+  <gmap-seasons-list
+    [breakpoint]="breakpoint"
+    [lightBlue]="lightBlue"
+    [lightYellow]="lightYellow"
+  />
+
+</gmap-accordion>

@@ -1,0 +1,48 @@
+/* Core Grid CSS */
+@import 'ag-grid-community/styles/ag-grid.css';
+/* Quartz Theme Specific CSS */
+@import 'ag-grid-community/styles/ag-theme-balham.css';
+@import 'ag-grid-community/styles/ag-theme-quartz.css';
+@import 'ag-grid-community/styles/ag-theme-material.css';
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined");
+
+html {
+  --gmap-primary: #4f2c7c;
+  --mat-icon-button-touch-target-display: none;
+}
+
+html, body {
+  height: 100%;
+  background-color: #eff2f1;
+}
+
+body {
+  margin: 0;
+  font-family: Worker Sans, Roboto, "Helvetica Neue", sans-serif;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.actions {
+  .mat-mdc-icon-button .mat-mdc-button-persistent-ripple {
+    border-radius: 0;
+  }
+}
+
+.mat-mdc-button-touch-target {
+  display: none;
+}
+
+.custom-select-panel.dark {
+  background: #2e1456;
+
+  .mdc-list-item__primary-text,
+  mat-option {
+    color: white !important;
+  }
+}

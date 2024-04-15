@@ -1,0 +1,20 @@
+<gmap-header
+  [notifyCount]="notifyCount"
+  [profileButtonColor]="profileButtonColor"
+  [notifyBadgeOverlap]="notifyBadgeOverlap"
+  [logoWidth]="logoWidth"
+  [logoMargin]="logoMargin"
+  [type]="type"
+  [searchOptions]="searchOptions"
+></gmap-header>
+<div class="content">
+  <div class="menu">
+    <gmap-sidebar
+      [menu]="menuItems"
+      [background]="'light-gray'"
+    ></gmap-sidebar>
+  </div>
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

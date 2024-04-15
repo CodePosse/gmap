@@ -1,0 +1,19 @@
+@switch (theme) {
+  @case ('primary') {
+    <div class="tag">
+      <div class="tag-label">{{ tagLabel }}</div>
+      <div class="tag-value">
+        <span>{{ tagValue }}</span>
+        <mat-icon class="material-symbols-outlined">{{ tagIcon }}</mat-icon>
+      </div>
+    </div>
+  }
+  @case ('secondary') {
+    <div class="tag-inline">
+      <div class="tag-value">
+        <span>{{ incrementerValue }}</span>
+        <mat-icon class="material-symbols-outlined">arrow_upward</mat-icon>
+      </div>
+    </div>
+  }
+}

@@ -1,0 +1,104 @@
+@for (item of sessions; let i = $index; track item) {
+  <gmap-accordion
+    [contentMarginLeft]="94"
+    [expanded]="true"
+    [id]="'episodes' + i"
+    [showIncrementer]="true"
+    [tagValue]="(i + 1) + ''"
+    [theme]="'secondary'"
+    [incrementerWidth]="'60px'"
+    [title]="'Episodes'">
+
+    <div class="inputs-row">
+      <div class="row-item">
+        <gmap-icon-button
+          [icon]="'delete'"
+          [type]="'Plain'"
+          class="push-bottom"
+        ></gmap-icon-button>
+      </div>
+
+      <div class="row-item">
+        <gmap-accordion-tag
+          [incrementerValue]="1"
+          [theme]="'secondary'"
+          class="push-bottom"
+        ></gmap-accordion-tag>
+      </div>
+
+      <div class="row-item">
+        <gmap-form-field
+          [id]="'episodeTitle'"
+          [inheritButtonBackground]="lightYellow"
+          [label]="'Episode Title'"
+          [placeholder]="'Enter title'"
+          [type]="'text'"
+        />
+      </div>
+
+      <div class="row-item">
+        <gmap-form-field
+          [id]="'initialUsReleaseDate'"
+          [inheritButtonBackground]="lightYellow"
+          [label]="'Initial US Release Date'"
+          [placeholder]="'MM/DD/YYYY'"
+          [type]="'datepicker'"
+        />
+      </div>
+
+      <div class="row-item">
+        <gmap-form-field
+          [id]="'episodeLabel'"
+          [inheritButtonBackground]="lightYellow"
+          [label]="'Episode Label'"
+          [placeholder]="'Enter label'"
+          [type]="'text'"
+        />
+      </div>
+
+      <div class="row-item">
+        <gmap-form-field
+          [id]="'episodeNumber'"
+          [inheritButtonBackground]="lightYellow"
+          [label]="'Episode Number'"
+          [placeholder]="'Enter number'"
+          [type]="'text'"
+        />
+      </div>
+    </div>
+
+    <div class="inputs-row">
+      <div class="row-item">
+        <div style="display: flex;align-items: center;justify-content: center;">
+          <gmap-icon-button
+            [icon]="'groups'"
+            [type]="'Plain'"
+          ></gmap-icon-button>
+          <mat-icon class="material-symbols-outlined">arrow_drop_down</mat-icon>
+        </div>
+      </div>
+
+      <div class="row-item">
+        <h5 style="text-transform: uppercase;margin: 0">Talent</h5>
+      </div>
+
+      <div class="row-item">
+        <h5 style="font-weight: bold;margin: 0">03 Total</h5>
+      </div>
+    </div>
+
+    <gmap-native-grid
+      [checkboxActive]="'#cdfff9'"
+      [checkboxInactive]="'#D9D9D9'"
+      [enablePrefixAction]="true"
+      [enableCheckbox]="true"
+      [highlightRow]="true"
+      [size]="'small'"
+      [data]="data"
+      [prefixActionIcon]="'drag_indicator'"
+      [checkboxActiveIcon]="'north'"
+      [checkboxInactiveIcon]="'circle'"
+    ></gmap-native-grid>
+
+  </gmap-accordion>
+}

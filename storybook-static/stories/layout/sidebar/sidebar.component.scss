@@ -1,0 +1,61 @@
+mat-drawer,
+mat-drawer-content {
+  transition: all 200ms ease-out;
+}
+
+.collapse-btn {
+  display: flex;
+  color: #4f2c7c;
+  font-size: 20px;
+  font-weight: normal;
+  margin: 8px;
+}
+
+mat-drawer {
+  display: flex;
+  width: 300px;
+  background: white;
+  flex-flow: column;
+
+  &.light-gray {
+    background: #eff2f1;
+  }
+
+  mat-list-item {
+    display: flex;
+    align-items: center;
+    color: #4e2d7f;
+
+    &.active {
+      background: #E3E6E5;
+
+      mat-icon,
+      a {
+        font-weight: bold;
+      }
+    }
+
+    mat-icon {
+      margin-right: 12px;
+      width: 30px;
+      height: 30px;
+      font-size: 30px;
+      overflow: visible;
+    }
+
+    [matlistitemtitle] {
+      margin: 0;
+      font-weight: 500;
+    }
+  }
+
+  &.collapsed {
+    width: 64px;
+
+    mat-list-item {
+      mat-icon {
+        margin: 0;
+      }
+    }
+  }
+}

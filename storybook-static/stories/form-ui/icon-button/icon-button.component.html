@@ -1,0 +1,25 @@
+@switch (type) {
+  @case ('Plain') {
+    <button mat-icon-button (click)="click.emit()">
+      <mat-icon class="material-symbols-outlined">{{ icon }}</mat-icon>
+    </button>
+  }
+  @case ('Menu') {
+    <button mat-icon-button [matMenuTriggerFor]="menuContent">
+      <mat-icon class="material-symbols-outlined">{{ icon }}</mat-icon>
+    </button>
+  }
+}
+
+<mat-menu #menuContent="matMenu">
+  @for (item of menu; track menu) {
+    @switch (item.type) {
+      @case ('link' && item.link) {
+        <button [routerLink]="item.link" mat-menu-item>{{ item.label }}</button>
+      }
+      @default {
+        <button mat-menu-item>{{ item.label }}</button>
+      }
+    }
+  }
+</mat-menu>

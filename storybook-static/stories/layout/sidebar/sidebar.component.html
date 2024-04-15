@@ -1,0 +1,22 @@
+<mat-drawer [class.collapsed]="collapsed" [class.light-gray]="background === 'light-gray'" [mode]="'side'" opened>
+  <button (click)="collapsed = !collapsed" class="collapse-btn" mat-icon-button>
+    <mat-icon class="material-symbols-outlined">
+      @if (!collapsed) {
+        chevron_left
+      } @else {
+        chevron_right
+      }
+    </mat-icon>
+  </button>
+
+  <mat-nav-list>
+    @for (item of menu; track item.label) {
+      <mat-list-item [routerLink]="[item.link]" [routerLinkActive]="'active'">
+        <mat-icon class="material-symbols-outlined" matListItemIcon>{{ item.icon }}</mat-icon>
+        @if (!collapsed) {
+          <a matListItemTitle>{{ item.label }}</a>
+        }
+      </mat-list-item>
+    }
+  </mat-nav-list>
+</mat-drawer>

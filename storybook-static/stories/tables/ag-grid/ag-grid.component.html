@@ -1,0 +1,29 @@
+@if (showTempleteSelection) {
+  <div class="template-menu">
+    <div class="filter-icon">
+      <mat-icon>filter_alt</mat-icon>
+    </div>
+    <div class="menu-width">
+      <a mat-button [matMenuTriggerFor]="menu" class="menu-color"> Templates
+        <em>
+          <mat-icon class="arrow-icon">navigate_next</mat-icon>
+        </em></a>
+      <mat-menu #menu="matMenu" class="menu-item">
+        <button mat-menu-item (click)="changeTemplate('Template-1')" class="menu-color">Template-1</button>
+        <button mat-menu-item (click)="changeTemplate('Template-2')" class="menu-color">Template-2</button>
+      </mat-menu>
+    </div>
+  </div>
+}
+
+<div class="download">
+  <button mat-button (click)="onBtnExport()" class="download-button">
+    <mat-icon>download</mat-icon>
+  </button>
+</div>
+<ag-grid-angular id="gridProject" style="min-width: 100%; " [class]="gridStyle" domLayout='autoHeight'
+                 [rowData]="rowData" [columnDefs]="colDefs" (gridReady)="onGridReady($event)"
+                 [suppressExcelExport]="showExportButton" [suppressMenuHide]="true" rowSelection='single'
+                 [pinnedTopRowData]="pinnedTopRowData" (firstDataRendered)="rowcount()"
+                 [alwaysShowVerticalScroll]="showVerticalScroll" [suppressHorizontalScroll]="false">
+</ag-grid-angular>

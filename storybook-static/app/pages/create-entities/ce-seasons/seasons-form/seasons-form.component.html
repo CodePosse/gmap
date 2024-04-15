@@ -1,0 +1,66 @@
+<mat-grid-list [cols]="breakpoint" rowHeight="2:1">
+  <mat-grid-tile>
+    <gmap-form-field
+      [id]="'seasonName'"
+      [inheritButtonBackground]="lightYellow"
+      [label]="'Season Name'"
+      [placeholder]="''"
+      [showInheritButton]="true"
+      [type]="'text'"
+    />
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <gmap-form-field
+      [id]="'episodeTitlePrefix'"
+      [inheritButtonBackground]="lightYellow"
+      [label]="'Episode Title Prefix'"
+      [placeholder]="''"
+      [showInheritButton]="true"
+      [type]="'text'"
+    />
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <gmap-form-field
+      [id]="'startingEpisodeNumber'"
+      [inheritButtonBackground]="lightYellow"
+      [label]="'Starting Episode Number'"
+      [placeholder]="''"
+      [showInheritButton]="true"
+      [type]="'number'"
+      [value]="'001'"
+    />
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <gmap-form-field
+      [id]="'numberOfEpisodes'"
+      [inheritButtonBackground]="lightYellow"
+      [label]="'Number of Episodes'"
+      [placeholder]="''"
+      [showIncrementDecrementButtons]="true"
+      [showInheritButton]="true"
+      [type]="'number'"
+      [value]="6"
+      style="display: block; width: 200px;"
+    />
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <gmap-form-field
+      [id]="'seasonMpmNumber'"
+      [inputBackground]="lightBlue"
+      [label]="'Season MPM #'"
+      [placeholder]="'ABC12345'"
+      [showInheritButton]="false"
+      [type]="'text'"
+    />
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <gmap-form-field
+      [id]="'releaseYear'"
+      [inputBackground]="lightBlue"
+      [label]="'Release Year'"
+      [placeholder]="'YYYY'"
+      [showInheritButton]="false"
+      [type]="'year-picker'"
+    />
+  </mat-grid-tile>
+</mat-grid-list>

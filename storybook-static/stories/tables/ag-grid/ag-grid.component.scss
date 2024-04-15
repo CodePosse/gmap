@@ -1,0 +1,66 @@
+.template-menu {
+  width: 100%;
+  background-color: #dcdcdc;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  height: 3.5em;
+  font-size: 21px;
+  display: flex;
+}
+
+.menu-width {
+  width: 90%;
+  padding-top: 14px;
+}
+
+.download {
+  padding-top: 25px;
+  display: inline;
+}
+
+.filter-icon {
+  padding-left: 24px;
+  padding-top: 19px;
+  color: #4f2c7c !important;
+  padding-right: 21px;
+}
+
+.mat-expansion-panel {
+  box-shadow: none !important;
+}
+
+.menu-color {
+  color: #4f2c7c !important;
+  font-size: 20px;
+}
+
+.mat-expansion-panel-header-title {
+  font-size: 1.4em;
+}
+
+.arrow-icon {
+  height: 14px !important;
+  width: 27px !important;
+  font-size: 16px;
+}
+
+::ng-deep .ag-row-pinned {
+  background-color: #dcdcdc !important;
+  font-weight: bold;
+  color: #4f2c7c !important;
+}
+
+::ng-deep .ag-header-row {
+  font-weight: bold;
+}
+
+.ag-theme-balham {
+  --ag-odd-row-background-color: #FFFF;
+  --ag-header-column-resize-handle-color: #FFFF;
+  --ag-font-family: var(--sans-family);
+}
+
+::ng-deep .ag-header-cell-text {
+  font-weight: bold;
+  color: black;
+}

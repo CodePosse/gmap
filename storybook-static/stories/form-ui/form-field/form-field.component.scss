@@ -1,0 +1,162 @@
+.input-field {
+  display: grid;
+  margin-right: 6px;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 10px;
+    font-weight: 500;
+    color: #616161;
+  }
+
+  &.hide-native-arrows {
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+  }
+
+  mat-form-field,
+  mat-select {
+    --mdc-outlined-text-field-outline-width: 0;
+
+    width: 100%;
+    border-radius: 6px;
+
+    &.large {
+      --mat-form-field-container-vertical-padding: 9px;
+      --mat-form-field-container-height: 48px;
+      font-size: 24px;
+
+      .inherit-button {
+        height: 48px;
+      }
+    }
+
+    &.normal {
+      --mat-form-field-container-vertical-padding: 7px;
+      --mat-form-field-container-height: 38px;
+      font-size: 18px;
+      //line-height: 17px;
+
+      .inherit-button {
+        height: 38px;
+      }
+    }
+  }
+
+  .datepicker {
+    position: relative;
+
+    mat-datepicker-toggle {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  mat-select {
+    display: flex;
+
+    mat-select-trigger {
+      display: flex;
+      align-items: center;
+      line-height: 23px;
+
+      mat-icon {
+        color: var(--gmap-primary);
+        margin-right: 6px;
+      }
+    }
+  }
+
+  .inherit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 4px 4px 0;
+    width: 20px;
+    padding: 0;
+
+    mat-icon {
+      overflow: visible;
+    }
+  }
+
+  .light {
+    --mat-select-enabled-arrow-color: black;
+    --mat-select-placeholder-text-color: rgba(0, 0, 0, 0.3);
+    --mdc-outlined-text-field-input-text-placeholder-color: rgba(0, 0, 0, 0.3);
+
+    .custom-select-panel {
+      background: white;
+    }
+  }
+
+  .dark {
+    --mat-select-enabled-arrow-color: white;
+    --mat-select-focused-arrow-color: white;
+    --mat-select-placeholder-text-color: rgba(255, 255, 255, 0.76);
+    --mat-select-panel-background-color: #2e1456;
+    background: #2e1456;
+
+    .custom-select-panel {
+      background: #2e1456;
+    }
+
+    mat-label,
+    mat-select {
+      color: white;
+      background: #2e1456;
+    }
+
+    svg {
+      fill: white;
+    }
+  }
+
+  .number-incrementer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+
+    button {
+      --mdc-icon-button-state-layer-size: 20px;
+      padding: 0;
+      background: #9A9A9A;
+      border-radius: 0;
+      border: 1px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:disabled {
+        opacity: 0.8;
+      }
+
+      mat-icon {
+        pointer-events: none;
+        color: white;
+        overflow: visible;
+        font-size: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

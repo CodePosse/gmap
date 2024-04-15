@@ -1,0 +1,11 @@
+<gmap-accordion title="Advance Search Filter" id="search-accorduan" [expanded]="true"> Search Filter Form goes here
+</gmap-accordion>
+<div class="grid">
+  <div style="display: flex; flex-direction: row">
+    <div style=" overflow: hidden; flex-grow: 1">
+      <gmap-ag-grid [gridStyle]="gridStyle" [rowData]="rowData" [showVerticalScroll]="showVerticalScroll"
+                   [showHorizontalScroll]="showHorizontalScroll" [colDefs]="colDefs" [rowSelection]="rowSelection"
+                   [showTempleteSelection]="true" [templates]="templates"></gmap-ag-grid>
+    </div>
+  </div>
+</div>
