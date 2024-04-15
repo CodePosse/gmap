@@ -1,0 +1,62 @@
+<table [ngClass]="size">
+  <thead>
+  <tr>
+
+    @if (enablePrefixAction) {
+      <th class="actions"></th>
+    }
+
+    @for (item of data[0] | keyvalue; let i = $index; track i) {
+      <th>{{ displayLabel(item) }}</th>
+    }
+
+    @if (enableCheckbox) {
+      <th class="actions"></th>
+    }
+
+  </tr>
+  </thead>
+  <tbody>
+    @for (item of data; let i = $index; track i) {
+      <tr>
+
+        @if (enablePrefixAction) {
+          <td class="actions" style="background: transparent">
+            <button class="action-button" mat-icon-button [style.background]="'transparent'"
+                    (click)="prefixButtonClicked.emit(item)">
+              <mat-icon class="material-symbols-outlined" [style.color]="'rgb(0 0 0 / 30%)'">
+                {{ prefixActionIcon }}&nbsp;
+              </mat-icon>
+            </button>
+          </td>
+        }
+
+        @for (val of item | keyvalue; track val.key) {
+          <td [style.background]="highlightRow && selection[i] ? checkboxActive : 'white'">{{ displayValue(val) }}</td>
+        }
+
+        @if (enableCheckbox) {
+          <td class="actions" [style.background]="selection[i] ? checkboxActive : checkboxInactive">
+            @if (selection[i]) {
+              <button class="action-button" mat-icon-button [style.background]="checkboxActive"
+                      (click)="toggleCheck(item,  i)">
+                <mat-icon class="material-symbols-outlined" [style.color]="inheritButtonIconColor">
+                  {{ checkboxActiveIcon }}
+                </mat-icon>
+              </button>
+            } @else {
+              <button class="action-button" mat-icon-button [style.background]="checkboxInactive"
+                      (click)="toggleCheck(item,  i)">
+                <mat-icon class="material-symbols-outlined" style="font-size: 10px;font-weight: 800;"
+                          [style.color]="inheritButtonIconColor">
+                  {{ checkboxInactiveIcon }}
+                </mat-icon>
+              </button>
+            }
+          </td>
+        }
+
+      </tr>
+    }
+  </tbody>
+</table>

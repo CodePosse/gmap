@@ -1,0 +1,10 @@
+mat-checkbox {
+  --mdc-checkbox-selected-icon-color: var(--gmap-primary);
+  --mdc-checkbox-selected-focus-icon-color: var(--gmap-primary);
+  --mdc-checkbox-selected-hover-icon-color: var(--gmap-primary);
+  --mdc-checkbox-selected-pressed-icon-color: var(--gmap-primary);
+  --mdc-checkbox-selected-focus-state-layer-color: var(--gmap-primary);
+  --mdc-checkbox-selected-hover-state-layer-color: var(--gmap-primary);
+  --mdc-checkbox-selected-pressed-state-layer-color: var(--gmap-primary);
+  user-select: none;
+}

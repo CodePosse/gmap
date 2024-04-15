@@ -1,0 +1,80 @@
+:host {
+  display: block;
+}
+
+.tag,
+.tag-inline {
+  background: #FFBB4D;
+
+  .tag-value {
+    display: flex;
+    align-items: center;
+
+    span {
+      opacity: 0.5;
+    }
+  }
+}
+
+.tag-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 18px;
+  position: relative;
+  margin-right: 30px;
+  border-radius: 4px;
+
+  .tag-value {
+    font-size: 18px;
+  }
+
+  mat-icon {
+    font-size: 12px;
+    position: absolute;
+    font-weight: 600;
+    right: -8px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0;
+    overflow: visible;
+  }
+}
+
+.tag {
+  display: flex;
+  height: 100%;
+  width: 100px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 30px;
+
+  .tag-label {
+    font-size: 12px;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .tag-value {
+    font-size: 24px;
+    color: #000;
+    font-weight: 400;
+    margin-top: 4px;
+
+    mat-icon {
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 0;
+      height: 0;
+      overflow: visible;
+      margin-left: 10px;
+    }
+  }
+}

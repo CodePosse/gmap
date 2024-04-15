@@ -1,0 +1,63 @@
+<header [class.light-gray]="isLightGray">
+
+  <!-- Brand -->
+  <span class="logo">
+    <img [style.margin-left]="logoMargin + 'px'" [style.width]="logoWidth + 'px'" alt="Logo"
+         src="/assets/images/logo.png">
+  </span>
+
+  <!-- Center -->
+  @switch (type) {
+    @case ('blank') {
+      <span class="header-spacer"></span>
+    }
+    @case ('actions') {
+      <div class="actions">
+        <h3>{{ title }}</h3>
+        <div style="display: flex;">
+          @if (cancelText) {
+            <button class="cancel-btn" mat-button>{{ cancelText }}</button>
+          }
+
+          @if (saveText) {
+            <button class="create-btn" mat-raised-button color="primary">{{ saveText }}</button>
+          }
+        </div>
+      </div>
+    }
+    @case ('search') {
+      <div class="search-bar">
+        <mat-form-field class="search-options" [appearance]="'outline'" [subscriptSizing]="'dynamic'">
+          <mat-select [value]="'all'">
+            @for (option of searchOptions; track searchOptions) {
+              <mat-option [value]="option.value">{{ option.label }}</mat-option>
+            }
+          </mat-select>
+          <div class="info">Refine Search</div>
+        </mat-form-field>
+
+        <mat-form-field class="search-field" [appearance]="'outline'" [subscriptSizing]="'dynamic'">
+          <input matInput [placeholder]="searchInputPlaceholder">
+          <mat-icon class="material-symbols-outlined" matSuffix>search</mat-icon>
+        </mat-form-field>
+
+        <div class="filter-btn">
+          <button mat-flat-button>
+            <mat-icon class="material-symbols-outlined" matSuffix>tune</mat-icon>
+          </button>
+          <div class="info">Advanced</div>
+        </div>
+      </div>
+    }
+  }
+
+  <!-- Right -->
+  <button class="notifications-btn" mat-mini-fab>
+    <div [matBadgeOverlap]="notifyBadgeOverlap" [matBadge]="notifyCount">
+      <mat-icon class="material-symbols-outlined">notifications_outlined</mat-icon>
+    </div>
+  </button>
+  <button [style.background]="profileButtonColor" mat-mini-fab>
+    <h2 class="user-initials">S</h2>
+  </button>
+</header>

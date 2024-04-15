@@ -1,0 +1,141 @@
+<div class="container">
+  <div class="grid" style="margin-bottom: 30px;">
+    <div>
+      <gmap-form-field [id]="'series-name'" [label]="'Series Name'" [placeholder]="''" [type]="'text'"
+                       [value]="'Breaking Bad'"></gmap-form-field>
+    </div>
+    <div style="margin: 0 50px">
+      <gmap-form-field [darkMode]="true" [id]="'type'" [label]="'Type'" [options]="types"
+                       [placeholder]="'Select'"
+                       [type]="'select'"
+                       [value]="'tv'"></gmap-form-field>
+    </div>
+    <div style="display: flex; justify-content: end;">
+      <gmap-icon-button [icon]="'library_add'"></gmap-icon-button>
+      <gmap-icon-button [icon]="'delete'"></gmap-icon-button>
+      <gmap-icon-button [icon]="'more_vert'" [type]="'Menu'" [menu]="menu"></gmap-icon-button>
+    </div>
+  </div>
+
+  <gmap-accordion [id]="'details'" [title]="'Details'" [expanded]="true">
+    <mat-grid-list [cols]="breakpoint" rowHeight="2:1">
+      <mat-grid-tile>
+        <gmap-form-field [id]="'occ'" [label]="'OCC'" [placeholder]="''" [showInheritButton]="true"
+                         [type]="'text'"></gmap-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <gmap-form-field [id]="'opc'" [label]="'OPC'" [placeholder]="''" [showInheritButton]="true"
+                         [type]="'text'"></gmap-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <gmap-form-field [id]="'brl'" [label]="'Broadcast Run Length'" [placeholder]="'00:00:00'"
+                         [showInheritButton]="true"
+                         [type]="'mask'"></gmap-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <gmap-form-field [id]="'pl'" [label]="'Primary Language'" [options]="languages" [placeholder]="'English'"
+                         [showInheritButton]="true"
+                         [type]="'select'"></gmap-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <gmap-form-field [id]="'genre'" [label]="'Genre'" [options]="genres" [placeholder]="''"
+                         [showInheritButton]="true"
+                         [type]="'select'"></gmap-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <gmap-form-field [id]="'locked'" [label]="'Locked'" [options]="locked" [placeholder]="''"
+                         [showInheritButton]="true"
+                         [type]="'select'"
+                         [value]="'0'"></gmap-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <gmap-form-field [id]="'title'" [label]="'Title Status'" [options]="[]" [placeholder]="'Select'"
+                         [showInheritButton]="true"
+                         [type]="'select'"></gmap-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <gmap-form-field [id]="'madeForMedia'" [label]="'Made For Media'" [options]="[]" [placeholder]="'Select'"
+                         [showInheritButton]="true"
+                         [type]="'select'"></gmap-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <gmap-form-field [id]="'bwColor'" [label]="'BW/Color'" [options]="colorGroups" [placeholder]="''"
+                         [showInheritButton]="true"
+                         [type]="'select'"
+                         [value]="'color'"></gmap-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <gmap-form-field [id]="'releaseYear'" [label]="'Release Year'" [placeholder]="'YYYY'" [showInheritButton]="true"
+                         [type]="'year-picker'"></gmap-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <gmap-form-field [id]="'firstReleaseMedia'" [label]="'First Release Media'" [options]="[]" [placeholder]="''"
+                         [showInheritButton]="true"
+                         [type]="'select'"></gmap-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <gmap-checkbox [label]="'Create new abbreviation'"></gmap-checkbox>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </gmap-accordion>
+
+  <gmap-accordion [id]="'finance'" [title]="'Finance'" [expanded]="true">
+    <mat-grid-list [cols]="breakpoint" rowHeight="2:1">
+      <mat-grid-tile>
+        <gmap-checkbox [labelPosition]="'before'" [label]="'Use generated MPM'"></gmap-checkbox>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <gmap-form-field [id]="'seriesMPM'" [label]="'Series MPM #'" [placeholder]="''" [showInheritButton]="true"
+                         [type]="'text'"></gmap-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <gmap-form-field [id]="'mpmPrefix'" [label]="'MPM # Prefix'" [placeholder]="''" [showInheritButton]="true"
+                         [type]="'text'"></gmap-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <gmap-form-field [id]="'startingMPM'" [label]="'Starting MPM #'" [placeholder]="''" [showInheritButton]="true"
+                         [type]="'text'"></gmap-form-field>
+      </mat-grid-tile>
+
+      <!--  Placeholder  -->
+      @if (clientWidth > 1000) {
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+      }
+
+      <mat-grid-tile>
+        <gmap-checkbox [labelPosition]="'before'" [label]="'Use generated catelog'"></gmap-checkbox>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <gmap-form-field [id]="'catelog'" [label]="'Catelog'" [placeholder]="''" [showInheritButton]="true"
+                         [type]="'text'"></gmap-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <gmap-form-field [id]="'opcProfitCenter'" [label]="'OPC Profit Center'" [placeholder]="''"
+                         [showInheritButton]="true"
+                         [type]="'text'"></gmap-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <gmap-form-field [id]="'opcCompanyCode'" [label]="'OPC Company Code'" [placeholder]="''"
+                         [showInheritButton]="true"
+                         [type]="'text'"></gmap-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <gmap-form-field [id]="'firstCommitDate'" [label]="'First Commit Date'" [placeholder]="'MM/DD/YYYY'"
+                         [showInheritButton]="true"
+                         [type]="'datepicker'"></gmap-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </gmap-accordion>
+
+  <gmap-accordion [id]="'tenant'" [title]="'Tenant'" [expanded]="true">
+    <gmap-native-grid
+      [checkboxActive]="'#cdfff9'"
+      [checkboxInactive]="'#D9D9D9'"
+      [enablePrefixAction]="true"
+      [enableCheckbox]="true"
+      [data]="tenants"
+    ></gmap-native-grid>
+  </gmap-accordion>
+</div>

@@ -1,0 +1,8 @@
+<mat-checkbox
+  [(indeterminate)]="indeterminate"
+  [(ngModel)]="checked"
+  (ngModelChange)="change.emit($event)"
+  [disabled]="disabled"
+  [labelPosition]="labelPosition">
+  {{ label }}
+</mat-checkbox>

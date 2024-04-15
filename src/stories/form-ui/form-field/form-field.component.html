@@ -1,0 +1,105 @@
+<div class="input-field" [class.hide-native-arrows]="showIncrementDecrementButtons" [style.width]="width">
+  @if (label) {
+    <label
+      [for]="id"
+      [style.color]="labelColor"
+      [style.text-transform]="labelTextTransform"
+    >{{ label }}</label>
+  }
+
+  <mat-form-field
+    [appearance]="'outline'"
+    [class.dark]="darkMode"
+    [class.light]="!darkMode"
+    [style.background]="!darkMode ? inputBackground : undefined"
+    [ngClass]="size"
+    [subscriptSizing]="'dynamic'"
+  >
+
+    <div style="display: flex;align-items: center;" matSuffix>
+      @if (showIncrementDecrementButtons) {
+        <div class="number-incrementer">
+          <button mat-icon-button (click)="increment($event)" [disabled]="value >= max">
+            <mat-icon class="material-symbols-outlined">arrow_drop_up</mat-icon>
+          </button>
+          <button mat-icon-button (click)="decrement($event);" [disabled]="value <= min">
+            <mat-icon class="material-symbols-outlined">arrow_drop_down</mat-icon>
+          </button>
+        </div>
+      }
+
+      @if (showInheritButton) {
+        <button class="inherit-button" mat-icon-button [style.background]="inheritButtonBackground"
+                (click)="inheritButtonChecked = !inheritButtonChecked">
+          <mat-icon class="material-symbols-outlined" [style.color]="inheritButtonIconColor">commit</mat-icon>
+        </button>
+      }
+    </div>
+
+    <!-- Inputs -->
+    @switch (type) {
+      @case ('select') {
+        <mat-select
+          [(ngModel)]="value"
+          (ngModelChange)="valueChange.emit($event)"
+          [ngClass]="size"
+          [id]="id"
+          [placeholder]="placeholder"
+          [panelClass]="panelClass"
+        >
+          <mat-select-trigger>
+            @if (prefixIcon) {
+              <mat-icon class="material-symbols-outlined">{{ prefixIcon }}</mat-icon>
+            }
+
+            {{ selectedOption?.label || placeholder }}
+          </mat-select-trigger>
+          @for (option of options; track options) {
+            <mat-option [value]="option.value">
+              @if (option.prefixIcon) {
+                <mat-icon class="material-symbols-outlined">{{ option.prefixIcon }}</mat-icon>
+              }
+              {{ option.label }}
+            </mat-option>
+          }
+        </mat-select>
+      }
+      @case ('datepicker') {
+        <div class="datepicker">
+          <input [(ngModel)]="value" (ngModelChange)="valueChange.emit($event)" matInput [matDatepicker]="picker"
+                 [placeholder]="placeholder" [id]="id">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker [startView]="'multi-year'" #picker></mat-datepicker>
+        </div>
+      }
+      @case ('year-picker') {
+        <div class="datepicker">
+          <input [(ngModel)]="value" (ngModelChange)="valueChange.emit($event)" matInput [type]="type"
+                 [placeholder]="placeholder" [id]="id">
+          <input matInput style="display: none;" [matDatepicker]="datepicker">
+          <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+          <mat-datepicker
+            [startView]="'multi-year'"
+            (yearSelected)="yearSelectedHandler($event, datepicker)"
+            #datepicker
+          ></mat-datepicker>
+        </div>
+      }
+      @case ('mask') {
+        <input [(ngModel)]="value" (ngModelChange)="valueChange.emit($event)" matInput [type]="type"
+               [placeholder]="placeholder" [id]="id"
+               [textMask]="{mask: mask}">
+      }
+      @case ('textarea') {
+        <textarea [(ngModel)]="value" (ngModelChange)="valueChange.emit($event)" matInput [placeholder]="placeholder"
+                  [id]="id"></textarea>
+      }
+      @default {
+        <input [(ngModel)]="value" (ngModelChange)="valueChange.emit($event)" matInput [type]="type"
+               [placeholder]="placeholder" [id]="id">
+      }
+    }
+
+  </mat-form-field>
+
+</div>

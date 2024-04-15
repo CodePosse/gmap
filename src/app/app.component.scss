@@ -1,0 +1,18 @@
+html,
+body {
+  margin: 0;
+}
+
+.content {
+  top: 2px;
+  display: flex;
+}
+
+.main-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: #E3E6E5;
+  top: 10px;
+  padding: 20px;
+}

@@ -1,0 +1,130 @@
+.header-spacer {
+  flex: 1 1 auto;
+}
+
+header {
+  --mdc-outlined-text-field-outline-width: 0;
+  --mat-select-enabled-arrow-color: white;
+  --mat-badge-background-color: #f07167;
+  --mat-select-focused-arrow-color: white;
+
+  background: white;
+  height: 128px;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+
+  &.light-gray {
+    background: #eff2f1;
+
+    mat-form-field {
+      background: white;
+    }
+  }
+
+  .logo {
+    img {
+      height: auto;
+    }
+  }
+
+  button {
+    box-shadow: none;
+  }
+
+  .notifications-btn {
+    background: transparent;
+    margin-right: 30px;
+
+    mat-icon {
+      color: black;
+    }
+  }
+}
+
+.search-bar {
+  display: flex;
+  width: 100%;
+  margin: 0 30px;
+
+  .info {
+    position: absolute;
+    bottom: -24px;
+    width: 100%;
+    font-size: 12px;
+    display: flex;
+    color: #4f2c7c;
+    font-weight: 500;
+    justify-content: center;
+  }
+
+  .search-options {
+    width: 250px;
+    background: #2e1456;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+
+    mat-label,
+    mat-select {
+      color: white;
+    }
+
+    svg {
+      fill: white;
+    }
+  }
+
+  .search-field {
+    width: 100%;
+  }
+
+  .filter-btn {
+    position: relative;
+    display: flex;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+
+    button {
+      width: 100px;
+      height: 56px;
+      line-height: 56px;
+      background: #f2eaf2;
+
+      mat-icon {
+        font-size: 32px;
+        color: #4f2c7c;
+        height: auto;
+        width: auto;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 50px;
+
+  button {
+    height: 50px;
+    font-size: 18px;
+    padding: 0 40px;
+
+    &.cancel-btn {
+      text-decoration: underline;
+      margin-right: 12px;
+    }
+
+    &.create-btn {
+      background: var(--gmap-primary);
+    }
+  }
+}
+
+.user-initials {
+  font-weight: normal;
+  margin: 0;
+}

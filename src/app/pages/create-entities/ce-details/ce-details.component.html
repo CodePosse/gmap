@@ -1,0 +1,64 @@
+<gmap-accordion [id]="'details'" [title]="'Details'" [expanded]="true">
+  <mat-grid-list [cols]="breakpoint" rowHeight="2:1">
+    <mat-grid-tile>
+      <gmap-form-field [id]="'occ'" [label]="'OCC'" [placeholder]="''" [showInheritButton]="true"
+                       [type]="'text'"></gmap-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <gmap-form-field [id]="'opc'" [label]="'OPC'" [placeholder]="''" [showInheritButton]="true"
+                       [type]="'text'"></gmap-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <gmap-form-field [id]="'brl'" [label]="'Broadcast Run Length'" [placeholder]="'00:00:00'"
+                       [showInheritButton]="true"
+                       [type]="'mask'"></gmap-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <gmap-form-field [id]="'pl'" [label]="'Primary Language'" [options]="languages" [placeholder]="'English'"
+                       [showInheritButton]="true"
+                       [type]="'select'"></gmap-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <gmap-form-field [id]="'genre'" [label]="'Genre'" [options]="genres" [placeholder]="''"
+                       [showInheritButton]="true"
+                       [type]="'select'"></gmap-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <gmap-form-field [id]="'locked'" [label]="'Locked'" [options]="locked" [placeholder]="''"
+                       [showInheritButton]="true"
+                       [type]="'select'"
+                       [value]="'0'"></gmap-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <gmap-form-field [id]="'title'" [label]="'Title Status'" [options]="titleStatuses" [placeholder]="'Select'"
+                       [showInheritButton]="true"
+                       [type]="'select'"></gmap-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <gmap-form-field [id]="'madeForMedia'" [label]="'Made For Media'" [options]="madeForMedia"
+                       [placeholder]="'Select'"
+                       [showInheritButton]="true"
+                       [type]="'select'"></gmap-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <gmap-form-field [id]="'bwColor'" [label]="'BW/Color'" [options]="colorGroups" [placeholder]="''"
+                       [showInheritButton]="true"
+                       [type]="'select'"
+                       [value]="'color'"></gmap-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <gmap-form-field [id]="'releaseYear'" [label]="'Release Year'" [placeholder]="'YYYY'" [showInheritButton]="true"
+                       [type]="'year-picker'"></gmap-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <gmap-form-field [id]="'firstReleaseMedia'" [label]="'First Release Media'" [options]="firstReleasedMedia"
+                       [placeholder]="''"
+                       [showInheritButton]="true"
+                       [type]="'select'"></gmap-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <gmap-checkbox [label]="'Create new abbreviation'"></gmap-checkbox>
+    </mat-grid-tile>
+  </mat-grid-list>
+</gmap-accordion>

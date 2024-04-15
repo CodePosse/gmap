@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="grid" style="margin-bottom: 30px;">
+    <div>
+      <gmap-form-field [id]="'series-name'" [label]="'Series Name'" [placeholder]="''" [type]="'text'"
+                       [value]="'Breaking Bad'"></gmap-form-field>
+    </div>
+    <div style="margin: 0 50px">
+      <gmap-form-field [darkMode]="true" [id]="'type'" [label]="'Type'" [options]="types"
+                       [placeholder]="'Select'"
+                       [type]="'select'"
+                       [value]="'tv'"></gmap-form-field>
+    </div>
+    <div style="display: flex; justify-content: end;">
+      <gmap-icon-button [icon]="'library_add'"></gmap-icon-button>
+      <gmap-icon-button [icon]="'delete'"></gmap-icon-button>
+      <gmap-icon-button [icon]="'more_vert'" [type]="'Menu'" [menu]="menu"></gmap-icon-button>
+    </div>
+  </div>
+
+  <gmap-ce-details [breakpoint]="breakpoint"/>
+
+  <gmap-ce-finance [clientWidth]="clientWidth" [breakpoint]="breakpoint"/>
+
+  <gmap-ce-tenant/>
+
+  <gmap-ce-genre/>
+
+  <gmap-ce-seasons [clientWidth]="clientWidth" [breakpoint]="breakpoint"/>
+</div>
