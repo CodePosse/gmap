@@ -36,7 +36,7 @@ export class AccordionComponent {
   @Output() incrementerValueChange = new EventEmitter<number>();
 
   // Tag
-  @Input() tagLabel = 'Tag';
+  @Input() tagLabel = 'Season';
   @Input() tagValue = '1';
   @Input() tagIcon = 'arrow_upward';
 }

@@ -16,7 +16,7 @@ import {AccordionTheme} from "../accordion.component";
 })
 export class AccordionTagComponent {
   @Input() theme: AccordionTheme = 'primary';
-  @Input() tagLabel: string = 'Tag';
+  @Input() tagLabel: string = 'Season';
   @Input() tagValue: string = '1';
   @Input() tagIcon: string = 'arrow_upward';
   @Input() incrementerValue: number = 1;
