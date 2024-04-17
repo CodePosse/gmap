@@ -1,48 +1,83 @@
 <gmap-accordion [id]="'finance'" [title]="'Finance'" [expanded]="true">
   <mat-grid-list [cols]="breakpoint" rowHeight="2:1">
-    <mat-grid-tile>
-      <gmap-checkbox [labelPosition]="'before'" [label]="'Use generated MPM'"></gmap-checkbox>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <gmap-form-field [id]="'seriesMPM'" [label]="'Series MPM #'" [placeholder]="''" [showInheritButton]="true"
-                       [type]="'text'"></gmap-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <gmap-form-field [id]="'mpmPrefix'" [label]="'MPM # Prefix'" [placeholder]="''" [showInheritButton]="true"
-                       [type]="'text'"></gmap-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <gmap-form-field [id]="'startingMPM'" [label]="'Starting MPM #'" [placeholder]="''" [showInheritButton]="true"
-                       [type]="'text'"></gmap-form-field>
-    </mat-grid-tile>
-
-    <!--  Placeholder  -->
-    @if (clientWidth > 1000) {
-      <mat-grid-tile></mat-grid-tile>
-      <mat-grid-tile></mat-grid-tile>
-    }
-
-    <mat-grid-tile>
-      <gmap-checkbox [labelPosition]="'before'" [label]="'Use generated catelog'"></gmap-checkbox>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <gmap-form-field [id]="'catelog'" [label]="'Catelog'" [placeholder]="''" [showInheritButton]="true"
-                       [type]="'text'"></gmap-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <gmap-form-field [id]="'opcProfitCenter'" [label]="'OPC Profit Center'" [placeholder]="''"
-                       [showInheritButton]="true"
-                       [type]="'text'"></gmap-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <gmap-form-field [id]="'opcCompanyCode'" [label]="'OPC Company Code'" [placeholder]="''"
-                       [showInheritButton]="true"
-                       [type]="'text'"></gmap-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <gmap-form-field [id]="'firstCommitDate'" [label]="'First Commit Date'" [placeholder]="'MM/DD/YYYY'"
-                       [showInheritButton]="true"
-                       [type]="'datepicker'"></gmap-form-field>
-    </mat-grid-tile>
+    <div class="dflex">
+      <div style="width: 200px; padding-top: 25px">
+        <gmap-checkbox
+          [labelPosition]="'before'"
+          [label]="'Use generated MPM'"
+        ></gmap-checkbox>
+      </div>
+      <div style="width: 250px">
+        <gmap-form-field
+          [id]="'seriesMPM'"
+          [label]="'Series MPM #'"
+          [placeholder]="''"
+          [showInheritButton]="true"
+          [type]="'text'"
+        ></gmap-form-field>
+      </div>
+      <div style="width: 250px">
+        <gmap-form-field
+          [id]="'mpmPrefix'"
+          [label]="'MPM # Prefix'"
+          [placeholder]="''"
+          [showInheritButton]="true"
+          [type]="'text'"
+        ></gmap-form-field>
+      </div>
+      <div style="width: 250px">
+        <gmap-form-field
+          [id]="'startingMPM'"
+          [label]="'Starting MPM #'"
+          [placeholder]="''"
+          [showInheritButton]="true"
+          [type]="'text'"
+        ></gmap-form-field>
+      </div>
+    </div>
+    <div class="dflex" style="padding-top: 30px">
+      <div style="width: 200px; padding-top: 25px">
+        <gmap-checkbox
+          [labelPosition]="'before'"
+          [label]="'Use generated catalog'"
+        ></gmap-checkbox>
+      </div>
+      <div>
+        <gmap-form-field
+          [id]="'catalog'"
+          [label]="'catalog'"
+          [placeholder]="''"
+          [showInheritButton]="true"
+          [type]="'text'"
+        ></gmap-form-field>
+      </div>
+      <div>
+        <gmap-form-field
+          [id]="'opcProfitCenter'"
+          [label]="'OPC Profit Center'"
+          [placeholder]="''"
+          [showInheritButton]="true"
+          [type]="'text'"
+        ></gmap-form-field>
+      </div>
+      <div>
+        <gmap-form-field
+          [id]="'opcCompanyCode'"
+          [label]="'OPC Company Code'"
+          [placeholder]="''"
+          [showInheritButton]="true"
+          [type]="'text'"
+        ></gmap-form-field>
+      </div>
+      <div style="width: 200px">
+        <gmap-form-field
+          [id]="'firstCommitDate'"
+          [label]="'First Commit Date'"
+          [placeholder]="'MM/DD/YYYY'"
+          [showInheritButton]="true"
+          [type]="'datepicker'"
+        ></gmap-form-field>
+      </div>
+    </div>
   </mat-grid-list>
 </gmap-accordion>

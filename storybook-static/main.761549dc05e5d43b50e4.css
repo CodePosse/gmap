@@ -1,0 +1,71 @@
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+@import url(https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined);
+@import url(https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap);
+/* Core Grid CSS */
+/* Quartz Theme Specific CSS */
+html {
+  --gmap-primary: #4f2c7c;
+  --mat-icon-button-touch-target-display: none;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #eff2f1;
+}
+
+body {
+  margin: 0;
+  font-family: Work Sans, Roboto, "Helvetica Neue", sans-serif !important;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.actions .mat-mdc-icon-button .mat-mdc-button-persistent-ripple {
+  border-radius: 0;
+}
+
+.mat-mdc-button-touch-target {
+  display: none;
+}
+
+.custom-select-panel.dark {
+  background: #2e1456;
+}
+.custom-select-panel.dark .mdc-list-item__primary-text,
+.custom-select-panel.dark mat-option {
+  color: white !important;
+}
+
+mat-grid-tile {
+  outline: 1px solid green !important;
+}
+
+[ng-reflect-id=brl] {
+  background: pink;
+}
+
+.mdc-text-field--no-label:focus-within {
+  background-color: lightyellow;
+}
+
+.dflex {
+  display: flex;
+  column-gap: 20px;
+}
+.dflex.space-between {
+  justify-content: space-between;
+}
+.dflex .mat-mdc-form-field-infix {
+  width: 100%;
+}
+
+label {
+  font-size: 10px;
+  font-family: Work Sans;
+  text-transform: uppercase;
+}

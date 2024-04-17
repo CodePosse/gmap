@@ -1,5 +1,6 @@
 <mat-grid-list [cols]="breakpoint" rowHeight="2:1">
-  <mat-grid-tile>
+  <div class="dflex" style=" padding-bottom:30px">
+  <div>
     <gmap-form-field
       [id]="'seasonName'"
       [inheritButtonBackground]="lightYellow"
@@ -8,8 +9,8 @@
       [showInheritButton]="true"
       [type]="'text'"
     />
-  </mat-grid-tile>
-  <mat-grid-tile>
+  </div>
+  <div>
     <gmap-form-field
       [id]="'episodeTitlePrefix'"
       [inheritButtonBackground]="lightYellow"
@@ -18,8 +19,8 @@
       [showInheritButton]="true"
       [type]="'text'"
     />
-  </mat-grid-tile>
-  <mat-grid-tile>
+  </div>
+  <div>
     <gmap-form-field
       [id]="'startingEpisodeNumber'"
       [inheritButtonBackground]="lightYellow"
@@ -29,8 +30,8 @@
       [type]="'number'"
       [value]="'001'"
     />
-  </mat-grid-tile>
-  <mat-grid-tile>
+  </div>
+  <div>
     <gmap-form-field
       [id]="'numberOfEpisodes'"
       [inheritButtonBackground]="lightYellow"
@@ -42,8 +43,8 @@
       [value]="6"
       style="display: block; width: 200px;"
     />
-  </mat-grid-tile>
-  <mat-grid-tile>
+  </div>
+  <div>
     <gmap-form-field
       [id]="'seasonMpmNumber'"
       [inputBackground]="lightBlue"
@@ -52,8 +53,8 @@
       [showInheritButton]="false"
       [type]="'text'"
     />
-  </mat-grid-tile>
-  <mat-grid-tile>
+  </div>
+  <div>
     <gmap-form-field
       [id]="'releaseYear'"
       [inputBackground]="lightBlue"
@@ -62,5 +63,5 @@
       [showInheritButton]="false"
       [type]="'year-picker'"
     />
-  </mat-grid-tile>
+  </div></div>
 </mat-grid-list>

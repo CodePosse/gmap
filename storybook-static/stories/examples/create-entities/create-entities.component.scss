@@ -6,3 +6,17 @@
   display: grid;
   grid-template-columns: auto 30% 20%;
 }
+.dflex {
+  display: flex;
+  column-gap: 20px;
+&.space-between{justify-content: space-between;}
+  .mat-mdc-form-field-infix {
+    width: 100%
+  }
+}
+
+label {
+  font-size: 10px;
+  font-family: Work Sans;
+  text-transform: uppercase;
+}

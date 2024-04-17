@@ -6,20 +6,22 @@
 @import 'ag-grid-community/styles/ag-theme-material.css';
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url("https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 html {
   --gmap-primary: #4f2c7c;
   --mat-icon-button-touch-target-display: none;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   background-color: #eff2f1;
 }
 
 body {
   margin: 0;
-  font-family: Worker Sans, Roboto, "Helvetica Neue", sans-serif;
+  font-family: Work Sans, Roboto, "Helvetica Neue", sans-serif !important;
 }
 
 .clearfix::after {
@@ -45,4 +47,32 @@ body {
   mat-option {
     color: white !important;
   }
+}
+
+// material form fixes
+mat-grid-tile {
+  outline: 1px solid green !important
+}
+
+[ng-reflect-id=brl] {
+  background: pink
+}
+
+.mdc-text-field--no-label:focus-within {
+  background-color: lightyellow;
+}
+
+.dflex {
+  display: flex;
+  column-gap: 20px;
+&.space-between{justify-content: space-between;}
+  .mat-mdc-form-field-infix {
+    width: 100%
+  }
+}
+
+label {
+  font-size: 10px;
+  font-family: Work Sans;
+  text-transform: uppercase;
 }

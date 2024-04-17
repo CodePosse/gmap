@@ -1,0 +1,208 @@
+@import "../../../../themes/generated/variables.base.scss";
+@import "../../../../dx-styles.scss";
+
+::ng-deep .dx-toolbar.header-toolbar .dx-toolbar-items-container .dx-toolbar-after {
+  padding: 0 40px;
+
+  :host-context(.screen-x-small) & {
+    padding: 0 20px;
+  }
+}
+
+::ng-deep .dx-toolbar .dx-toolbar-item.menu-button {
+  width: $side-panel-min-width;
+  text-align: center;
+  padding: 0;
+}
+
+::ng-deep .header-title .dx-item-content {
+  padding: 0;
+  margin: 0;
+}
+
+:host-context(.dx-theme-generic) {
+  .user-button>.dx-button-content {
+    padding: 3px;
+  }
+}
+
+.main_nav_area {
+  grid-area: mainnav;
+  background-color: var(--grey-dk-1);
+}
+
+.prime-actions-area {
+  grid-area: primeactions;
+  color: rgba(0, 0, 0, .5);
+  display: flex;
+  justify-items: stretch;
+
+}
+
+.quick-search-wfilter {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+label[for="quick-search-filter-button"] {
+  font-size: var(--step--2);
+  font-weight: 600;
+  min-width: 200px;
+  margin-left: 44px;
+  margin-top: 31px;
+  text-align: center;
+  height: 1em;
+  position: absolute;
+}
+
+input[name="quick-search-filter-button"] {
+  width: 50px;
+}
+
+.search-area {
+  width: 75%;
+  height: fit-content;
+}
+
+.quick-search-wfilter input[type="text"] {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.user-settings-area {
+  grid-area: usersettings;
+  min-width: 100px;
+  color: rgba(0, 0, 0, .5);
+  min-width: 250px;
+  height: fit-content;
+}
+
+.content_area {
+  grid-area: content;
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  color: rgba(0, 0, 0, .5);
+}
+
+.widget_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  flex: 2;
+}
+
+.widget-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 60px
+}
+
+.user-controls-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5vw;
+  height: 2.3em;
+  padding-inline: 10%;
+}
+
+.footer_area {
+  grid-area: footer;
+  padding: 1rem;
+}
+
+.homepage-grid {
+  height: 100vh;
+  min-height: 600px;
+  display: grid;
+  justify-content: space-between;
+  align-content: stretch;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 90px auto 5vh;
+  grid-template-areas:
+    "logo primeactions usersettings"
+    "mainnav content content"
+    "mainnav footer footer";
+}
+
+.user-initial-avatar {
+  aspect-ratio: 1/1;
+  padding: .33em .55em;
+  color: var(--background-color);
+  border-radius: 50%;
+  text-align: center;
+  font-size: var(--step-0);
+  background-color: var(--brand-prime);
+}
+
+@media only screen and (min-width: 768px) {
+  .widget_grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .side-button-attachment {
+    min-width: 200px;
+  }
+}
+
+.menu_container {
+  width: 100%;
+  height: 100px;
+}
+
+.header-align {
+  display: flex;
+}
+
+.side-button-attachment {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border: 0;
+  color: var(--default-white);
+  background-color: var(--brand-prime);
+  min-width: min-content;
+  font-size: var(--step--1);
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  box-shadow: none;
+  display: flex;
+  flex-direction: row;
+  min-height: 40px;
+  min-width: 200px;
+}
+
+.search-text-box {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  width: 58%;
+  height: 40px;
+}
+
+.dx-toolbar {
+  height: 41px;
+  padding-left: 10px;
+  background-color: rgba(239, 242, 241, 1);
+}
+
+::ng-deep .dx-drawer-shader {
+  background-color: transparent;
+}
+
+::ng-deep .dx-toolbar .dx-toolbar-items-container {
+  height: fit-content;
+}
+
+::ng-deep .logo-area {
+  background-image: url('../../../../../assets/images/logo.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+::ng-deep .container {
+  height: 80px !important;
+}
